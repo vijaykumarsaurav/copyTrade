@@ -1,2 +1,1 @@
-# copyTrade
-copyTrade
+git remote set-url origin https://github.com/vijaykumarsaurav/copyTrade.git
