@@ -1,1 +1,5 @@
-Portal code will be portal folder only
+# basic-ecommerce
+
+npm i 
+npm start 
+npm run build 

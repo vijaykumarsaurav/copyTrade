@@ -1,5 +1,6 @@
+/api/node_modules/*
 /node_modules/*
-/node/node_modules/*
+/portal/node_modules/*
 /webdata
 /build
 

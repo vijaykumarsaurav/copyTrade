@@ -25,19 +25,31 @@ mysqlConnection.connect(function (err) {
     console.log("Mysql Connected in server.js :) ");
 });
 
-
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-app.get('/api/users', (req, res) => {
-    res.json([
-      { id: 1, name: 'John Doe' },
-      { id: 2, name: 'Jane Doe' }
-    ]);
+app.patch('/login:id', (req, res) => {
+
+  //login all if no id pass
+  res.send('Hello, World!');
+});
+
+app.patch('/api/accounts:id', (req, res) => {
+
+  //update by id 
+  res.send('Hello, World!');
+});
+
+app.delete('/api/accounts:id', (req, res) => {
+ //delete by id 
+});
+
+app.get('/api/accounts', (req, res) => {
+  //get all accouts 
   });
   
-app.post('/api/users', (req, res) => {
+app.post('/api/accounts', (req, res) => {
 
    // console.log('body', req.body)
     let name = req.body.name; 
@@ -46,7 +58,7 @@ app.post('/api/users', (req, res) => {
     let apiKey = req.body.apiKey; 
     let totpSecret = req.body.totpSecret; 
 
-    var insSql = `INSERT INTO copytrade.users (name, accountId, password, apiKey, totpSecret) VALUES('${name}', '${accountId}', '${password}', '${apiKey}', '${totpSecret}')`; 
+    var insSql = `INSERT INTO copytrade.accounts (name, accountId, password, apiKey, totpSecret) VALUES('${name}', '${accountId}', '${password}', '${apiKey}', '${totpSecret}')`; 
     console.log('insSql', insSql)
 
     mysqlConnection.query(insSql, function (err, insertResult) {
